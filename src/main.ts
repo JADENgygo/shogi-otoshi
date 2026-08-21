@@ -91,6 +91,7 @@ const resultPanel = document.querySelector<HTMLDivElement>("#result-panel");
 const resultTitle = document.querySelector<HTMLHeadingElement>("#result-title");
 const playAgain = document.querySelector<HTMLButtonElement>("#play-again");
 const themeToggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
+const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
 
 if (
   !canvas ||
@@ -100,7 +101,8 @@ if (
   !resultPanel ||
   !resultTitle ||
   !playAgain ||
-  !themeToggle
+  !themeToggle ||
+  !themeColor
 ) {
   throw new Error("ゲームの初期化に必要な要素が見つかりません。");
 }
@@ -427,6 +429,7 @@ Events.on(engine, "afterUpdate", () => {
 const setTheme = (theme: "light" | "dark"): void => {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("shogi-otoshi-theme", theme);
+  themeColor.content = theme === "dark" ? "#171412" : "#f6f0e5";
   themeToggle.setAttribute(
     "aria-label",
     theme === "dark" ? "ライトモードに切り替える" : "ダークモードに切り替える",
