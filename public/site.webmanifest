@@ -1,0 +1,23 @@
+{
+  "name": "Shogi Otoshi",
+  "short_name": "Shogi Otoshi",
+  "description": "将棋の駒をはじいて相手の駒を盤外へ落とす対戦ゲーム",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f0e5",
+  "theme_color": "#f6f0e5",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
