@@ -80,8 +80,6 @@ app.innerHTML = `
         <p class="game-hint"><span aria-hidden="true">↗</span> 自分の駒をドラッグ。長く引くほど強く飛びます。</p>
       </section>
     </main>
-
-    <footer>© 2026 Shogi Otoshi <span class="footer-dot">・</span> 友達と一緒に、一本勝負。</footer>
   </div>
 `;
 

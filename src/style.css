@@ -321,18 +321,6 @@ main {
   font-weight: 700;
 }
 
-footer {
-  padding: 24px 0 36px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  text-align: center;
-}
-
-.footer-dot {
-  margin: 0 6px;
-  color: var(--accent);
-}
-
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 20px, 1120px);
