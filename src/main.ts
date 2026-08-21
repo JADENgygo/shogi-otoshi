@@ -212,6 +212,32 @@ const resetGame = (): void => {
   updateStatus();
 };
 
+const reduceToOnePiecePerPlayer = (): void => {
+  const survivors = new Set<Body>();
+  for (const player of [1, 2] satisfies Player[]) {
+    const survivor =
+      pieces.find((piece) => piece.owner === player && piece.label === "王") ??
+      pieces.find((piece) => piece.owner === player);
+    if (survivor) survivors.add(survivor.body);
+  }
+
+  for (const piece of pieces) {
+    if (!survivors.has(piece.body)) Composite.remove(engine.world, piece.body);
+  }
+  pieces = pieces.filter((piece) => survivors.has(piece.body));
+  for (const piece of pieces) {
+    Body.setVelocity(piece.body, { x: 0, y: 0 });
+    Body.setAngularVelocity(piece.body, 0);
+  }
+  selectedPiece = null;
+  dragStart = null;
+  dragCurrent = null;
+  shotInProgress = false;
+  settledFrames = 0;
+  canvas.classList.remove("is-aiming");
+  updateStatus();
+};
+
 const resizeCanvas = (): void => {
   const cssSize = Math.min(canvas.parentElement?.clientWidth ?? 720, 720);
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -418,6 +444,18 @@ themeToggle.addEventListener("click", () => {
   setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
 });
 playAgain.addEventListener("click", resetGame);
+
+if (import.meta.env.DEV) {
+  window.addEventListener("keydown", (event) => {
+    const target = event.target;
+    const isEditing =
+      target instanceof HTMLElement &&
+      (target.isContentEditable || target.matches("input, textarea, select, button"));
+    if (event.code !== "Space" || event.repeat || isEditing || winner) return;
+    event.preventDefault();
+    reduceToOnePiecePerPlayer();
+  });
+}
 
 const resizeObserver = new ResizeObserver(resizeCanvas);
 resizeObserver.observe(canvas.parentElement ?? canvas);
