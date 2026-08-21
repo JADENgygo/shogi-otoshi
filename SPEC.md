@@ -29,3 +29,11 @@
 - 盤はcanvasを使う
 - vitestで単体テストする
 - biomeで整形、静的解析する
+
+## OGP
+
+- デプロイ先のURLは`https://shogi-otoshi.pages.dev/`とする
+- タイトルは`Shogi Otoshi`とする
+- 説明文は`将棋の駒をはじいて相手の駒を盤外へ落とす対戦ゲーム`とする
+- OGP画像は1200×630pxのPNG画像を使用する
+- Xで大きな画像を表示するため、Twitter Cardは`summary_large_image`とする
