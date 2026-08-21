@@ -42,8 +42,8 @@ app.innerHTML = `
         <span>Shogi Otoshi</span>
       </a>
       <nav class="header-actions" aria-label="サイトメニュー">
-        <a class="icon-button" href="https://github.com/JADENgygo/shogi-otoshi" target="_blank" rel="noreferrer" aria-label="GitHubでソースコードを見る">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.02c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.57-.3-5.27-1.29-5.27-5.7 0-1.27.45-2.3 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.1 0 4.43-2.71 5.4-5.29 5.69.42.36.79 1.06.79 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+        <a class="icon-button" href="https://x.com/JADENgygo" target="_blank" rel="noreferrer" aria-label="XでJADENgygoを見る">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.26-8.3L2.98 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.84h1.73L8.44 4.05H6.59L17.8 19.84Z"/></svg>
         </a>
         <button class="icon-button" id="theme-toggle" type="button" aria-label="ダークモードに切り替える">
           <span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span>
